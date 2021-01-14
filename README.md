@@ -1,9 +1,9 @@
 ### Hi bug generators! 
 
-My name is on my profile my email is also there not?     
-I am constantly learning    
-even from my mistakes when i programming    
-and when not programming too.    
+My name is on my profile, my email is there too, right?  
+I am constantly learning  
+even my mistakes when programming  
+and also when I'm not programming.    
 <!--
 **DavidVillalobos/DavidVillalobos** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
   
