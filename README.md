@@ -1,6 +1,5 @@
 ### Hi bug generators! 
 
-My name is on my profile, my email is there too, right?  
 I am constantly learning  
 even my mistakes when programming  
 and also when I'm not programming.    
