@@ -16,3 +16,7 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
           # GITHUB_TOKEN is a special auto-generated token restricted to current repository, which is used to push files in it
           committer_token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: lowlighter/metrics@latest
+        with:
+          template: classic
+          query: '{"repo":"Tiny_Editor"}' # Use a JSON encoded object to pass your repository name in "repo" key
