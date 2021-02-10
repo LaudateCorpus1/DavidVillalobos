@@ -2,8 +2,6 @@
 
 I am learning from my mistakes when I am programming and also when I am not.  
 
-![Metrics](https://github.com/DavidVillalobos/DavidVillalobos/blob/main/metrics.personal.main.svg)
-
-![Languages](https://github.com/DavidVillalobos/DavidVillalobos/blob/main/metrics.personal.lang.svg)
+![Personal Metrics](https://github.com/DavidVillalobos/DavidVillalobos/blob/main/github-metrics.svg)
 
 ![Github Streak](https://github-readme-streak-stats.herokuapp.com/?user=DavidVillalobos&theme=dark&background=0D1117)
