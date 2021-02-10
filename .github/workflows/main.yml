@@ -1,3 +1,5 @@
+# See https://github.com/lowlighter/metrics for documentation
+# This workflow is scheduled for every hour, and also run after each commit (GitHub action excluded) on master/main branch
 name: Metrics
 on:
   # Schedule updates (each hour)
@@ -5,21 +7,70 @@ on:
   # Lines below let you run workflow manually and on each commit (optional)
   push: {branches: ["master", "main"]}
   workflow_dispatch:
+  
 jobs:
   github-metrics:
     runs-on: ubuntu-latest
     steps:
-      # See action.yml for all options
-      - uses: lowlighter/metrics@latest
+      - name: Personal metrics
+        uses: lowlighter/metrics@latest
         with:
-          # Your GitHub token
+          filename: metrics.personal.main.svg
           token: ${{ secrets.METRICS_TOKEN }}
-          # GITHUB_TOKEN is a special auto-generated token restricted to current repository, which is used to push files in it
           committer_token: ${{ secrets.GITHUB_TOKEN }}
-          template: classic
-          query: '{"repo":"Tiny_Editor"}' # Use a JSON encoded object to pass your repository name in "repo" key
-          plugin_wakatime: yes                                      # (🚧 @master feature)
-          plugin_wakatime_token: ${{ secrets.WAKATIME_TOKEN }}      # Required
-          plugin_wakatime_days: 7                                   # Display last week stats
-          plugin_wakatime_sections: time, projects, projects-graphs # Display time and projects sections, along with projects graphs
-          plugin_wakatime_limit: 4                                  # Show 4 entries per graph
+          base: header, respositories
+          # Metrics Isometric Commit Calendar Plugin
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: full-year  # Display full year instead of half year
+          # Lines of Code Changed Plugin
+          plugin_lines: yes
+          config_order: base.header, base.repositories, isocalendar
+          config_padding: 10%
+      - name: Perdonal metrics (languages)          
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.personal.lang.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          committer_token: ${{ secrets.GITHUB_TOKEN }}
+          base: ""
+          # Metrics Language Plugin
+          plugin_languages: yes
+          plugin_languages_details: bytes-size, percentage  # Additionally display total bytes size and percentage
+          config_padding: 6%, 10%
+
+      - name: Personal metrics (gist)
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.personal.gists.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          committer_token: ${{ secrets.GITHUB_TOKEN }}
+          base: ""
+          # Gists Plugin
+          plugin_gists: yes
+          config_padding: 6%, 10%
+
+      - name: Personal metrics (recent activity)
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.personal.activity.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          committer_token: ${{ secrets.GITHUB_TOKEN }}
+          base: ""
+          # Recent Activity Plugin
+          plugin_activity: yes
+          plugin_activity_limit: 3    # Events limit
+          plugin_activity_days: 0    # Keep only events from last n days (can be set to 0 to disable limitations)
+          plugin_activity_filter: all # Show all events (use table above to filter events types)
+          config_padding: 6%, 10%
+
+      - name: Personal metrics (starred repositories)
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.personal.starred.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          committer_token: ${{ secrets.GITHUB_TOKEN }}
+          base: ""
+          # Recently Starred Repositories Plugin
+          plugin_stars: yes
+          plugin_stars_limit: 1
+          config_padding: 6%, 10%
