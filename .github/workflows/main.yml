@@ -26,7 +26,7 @@ jobs:
           plugin_lines: yes
           config_order: base.header, base.repositories, isocalendar
           config_padding: 10%
-      - name: Perdonal metrics (languages)          
+      - name: Personal metrics (languages)          
         uses: lowlighter/metrics@latest
         with:
           filename: metrics.personal.lang.svg
@@ -35,7 +35,8 @@ jobs:
           base: ""
           # Metrics Language Plugin
           plugin_languages: yes
-          plugin_languages_details: bytes-size, percentage  # Additionally display total bytes size and percentage
+          plugin_languages_ignored: TeX, Vim Script
+          plugin_languages_details: percentage  # Additionally display total bytes size and percentage
           config_padding: 6%, 10%
 
       - name: Personal metrics (recent activity)
