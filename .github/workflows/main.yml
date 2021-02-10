@@ -3,7 +3,7 @@
 name: Metrics
 on:
   # Schedule updates (each hour)
-  schedule: [{cron: "* * * * *"}]
+  schedule: [{cron: "0 0 * * *"}]
   # Lines below let you run workflow manually and on each commit (optional)
   push: {branches: ["master", "main"]}
   workflow_dispatch:
@@ -38,17 +38,6 @@ jobs:
           plugin_languages_details: bytes-size, percentage  # Additionally display total bytes size and percentage
           config_padding: 6%, 10%
 
-      - name: Personal metrics (gist)
-        uses: lowlighter/metrics@latest
-        with:
-          filename: metrics.personal.gists.svg
-          token: ${{ secrets.METRICS_TOKEN }}
-          committer_token: ${{ secrets.GITHUB_TOKEN }}
-          base: ""
-          # Gists Plugin
-          plugin_gists: yes
-          config_padding: 6%, 10%
-
       - name: Personal metrics (recent activity)
         uses: lowlighter/metrics@latest
         with:
@@ -61,16 +50,4 @@ jobs:
           plugin_activity_limit: 3    # Events limit
           plugin_activity_days: 0    # Keep only events from last n days (can be set to 0 to disable limitations)
           plugin_activity_filter: all # Show all events (use table above to filter events types)
-          config_padding: 6%, 10%
-
-      - name: Personal metrics (starred repositories)
-        uses: lowlighter/metrics@latest
-        with:
-          filename: metrics.personal.starred.svg
-          token: ${{ secrets.METRICS_TOKEN }}
-          committer_token: ${{ secrets.GITHUB_TOKEN }}
-          base: ""
-          # Recently Starred Repositories Plugin
-          plugin_stars: yes
-          plugin_stars_limit: 1
           config_padding: 6%, 10%
