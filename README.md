@@ -1,4 +1,5 @@
 ### ¡Hi bug generators!
+
 I am learning from my mistakes when I am programming :octocat: and also when I am not.  
 Contact me:    
 [![](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/david-villalobos-b099721bb/)  
