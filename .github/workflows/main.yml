@@ -29,7 +29,6 @@ jobs:
           plugin_languages_colors: github
           plugin_languages_ignored: TeX, Vim script, Makefile
           plugin_languages_details: bytes-size, percentage             # Additionally display total bytes size and percentage
-          plugin_languages_threshold: 2%                               # Hides all languages less than 2%
           plugin_habits: yes
           plugin_habits_from: 200       # Use 200 events to compute habits
           plugin_habits_days: 20        # Keep only events from last 14 days
