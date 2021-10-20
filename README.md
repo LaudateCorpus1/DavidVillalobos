@@ -4,6 +4,7 @@ I am learning from my mistakes when I am programming :octocat: and also when I a
 Contact me:    
 [![](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/david-villalobos-b099721bb/)  
 [![](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:villalobosgonzalezluisdavid@gmail.com)  
+[![](https://www.codewars.com/users/DavidVillalobos/badges/large)](https://www.codewars.com/users/DavidVillalobos)
 
 ![Personal Metrics](https://github.com/DavidVillalobos/DavidVillalobos/blob/master/github-metrics.svg)  
 
